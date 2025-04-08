@@ -2,8 +2,6 @@
 #make login function
 #make logged in screen
 #make change password function
-passwords = []
-usernames = []
 
 def main():
     print("1. Register")
@@ -24,8 +22,11 @@ def main():
         main()
 
 def register():
-    input("What's your name? ").appendinput(usernames)
-    input("What's your password? ").appendinput(passwords)
+    name = input("What's your name? ")
+    password = input("What's your password? ")
+
+    with open("user&pass.txt", "a") as file:
+    	file.write(f"{name},{password}\n")
 
     print("Registered!")
     main()
@@ -34,11 +35,16 @@ def register():
 def login():
     name_login = input("Enter username: ")
     password_login = input("Enter password: ")
-    for i in usernames(i)
-        lines = file.readlines(username, password)
+    with open("user&pass.txt", "r") as file:
+        for line in file:
+            username, password = line.rstrip().split(",")
+            if name_login == username and password_login == password:
+                print("Logged in!")
+                logged_in()
+            else:
+                print("Incorrect password or username")
+                login()
         
-
-#incomplete do this later
 
 def logged_in():
     print("1. Logout")
