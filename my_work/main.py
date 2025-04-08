@@ -33,9 +33,10 @@ def register():
 def login():
     name_login = input("Enter username: ")
     password_login = input("Enter password: ")
+    
     with open("user&pass.txt", "r") as file:
         for line in file:
-            username, password = line.rstrip().split(",")
+            username, password = line.split(",")
             if name_login == username and password_login == password:
                 print("Logged in!")
                 logged_in()
