@@ -1,6 +1,4 @@
-
-#make login function
-#make logged in screen
+#fix login issue
 #make change password function
 
 def main():
@@ -59,3 +57,8 @@ def quit():
     exit()
 
 main()
+
+#def change_password():
+#   with open("user&pass.txt" "w") as file:
+#       for line in file:
+#           new_password = password
